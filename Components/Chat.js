@@ -12,7 +12,7 @@ export function Chat() {
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'DeV',
+          name: 'DV',
         },
       },
     ])
