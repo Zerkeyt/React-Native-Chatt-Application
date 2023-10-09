@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
-import { Link } from '@react-navigation/native';
 
 const Register = ({ navigation }) => {
   const [username, setUsername] = useState('');
