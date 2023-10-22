@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
 
 const Register = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -33,26 +34,49 @@ const Register = ({ navigation }) => {
       console.error(error);
     }
   };
+  const StyledText = styled.Text`
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  background-color: green;
+  border-width: 5px;
+  border-color: darkgreen;
+  border-radius: 0px;
+  padding: 5px;
+  margin-top: 100px;
+`;
 
+const StyledRegisterText = styled.Text`
+  font-size: 15px;
+  color: blue;
+  text-align: center;
+  padding: 10px;  
+  margin-bottom: 20px;
+`;
   return (
     <View>
-      <Text>Registrera dig</Text>
-      <TextInput
-        placeholder="Användarnamn"
-        value={username}
-        onChangeText={text => setUsername(text)}
-      />
-      <TextInput
-        placeholder="Lösenord"
-        secureTextEntry
-        value={password}
-        onChangeText={text => setPassword(text)}
-      />
-      <Button title="Registrera" onPress={handleRegister} />
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text>Login here</Text>
-      </TouchableOpacity>
-    </View>
+    <StyledRegisterText>Register here</StyledRegisterText>
+    <TextInput
+  style={{borderColor: 'gray', borderWidth: 2, margin: 10, padding: 5}}
+  placeholder="User name"
+  value={username}
+  onChangeText={text => setUsername(text)}
+/>
+<TextInput
+  style={{borderColor: 'gray', borderWidth: 2, margin: 10, padding: 5}}
+  placeholder="Password"
+  secureTextEntry
+  value={password}
+  onChangeText={text => setPassword(text)}
+/>
+
+
+    <Button style={{marginTop: 50}} title="Register" onPress={handleRegister} />
+    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+      <StyledText>Login here</StyledText>
+    </TouchableOpacity>
+  </View>
+  
   );
 };
 

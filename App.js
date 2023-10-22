@@ -2,10 +2,13 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { createDrawerNavigator} from '@react-navigation/drawer';
 import LoginScreen from './LoginScreen';
 import Register from './Register';
 import Chat from './Components/Chat';
+import Logout from './Logout';
+
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -21,14 +24,19 @@ const Settings = () => {
 };
 
 const App = () => { 
+  
   return (
      <NavigationContainer> 
       <Drawer.Navigator>
       <Drawer.Screen name="Settings" component={Settings} />
-      <Drawer.Screen name="Logout" component={LoginScreen} />
+        <Drawer.Screen name="Home" component={Register} /> 
+        <Drawer.Screen name="Logout" component={Logout} /> 
       </Drawer.Navigator>
     </NavigationContainer> 
   );
 };
+
+
+
 
 export default App;
