@@ -128,11 +128,6 @@ export default function Chat() {
   const handleSingleTap = (message) => {
     Alert?.alert("Delete", "Are you sure you want to delete this Message?", [
       { text: "Cancel", style: "Cancel" },
-      {
-        
-  const handleSingleTap = (message) => {
-    Alert?.alert("Delete", "Are you sure you want to delete this Message?", [
-      { text: "Cancel", style: "Cancel" },
    {
         text: "Delete",
 
